@@ -1,15 +1,15 @@
 import './globals.css'
-import type { Metadata } from 'next'
+import type { Metadata } from 'next' // keep only Metadata import
 import { Inter } from 'next/font/google'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('http://localhost:3000'),
   title: 'ExamReview PH - Entrance Exam Reviewers for Filipino Students',
   description: 'Get access to curated review materials for UPCAT, ACET, DCAT, and other Philippine entrance exams. Expert-created content to help you succeed.',
   keywords: 'entrance exam, reviewer, philippines, upcat, acet, dcat, math, english, filipino, logic, reading',
   authors: [{ name: 'ExamReview PH' }],
-  viewport: 'width=device-width, initial-scale=1',
   robots: 'index, follow',
   openGraph: {
     type: 'website',
@@ -34,6 +34,12 @@ export const metadata: Metadata = {
     title: 'ExamReview PH - Entrance Exam Reviewers for Filipino Students',
     description: 'Get access to curated review materials for UPCAT, ACET, DCAT, and other Philippine entrance exams.',
   },
+}
+
+// No type annotation here
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
 }
 
 export default function RootLayout({
