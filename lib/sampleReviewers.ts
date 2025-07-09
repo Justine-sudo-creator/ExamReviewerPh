@@ -7,7 +7,7 @@ export const sampleReviewers: Reviewer[] = [
     description: 'Comprehensive math review covering algebra, geometry, and trigonometry with practice problems.',
     subject: 'Practice Sets',
     difficulty: 'Hard',
-    price: 299,
+    price: 49,
     payment_url: 'https://ko-fi.com/s/math-upcat-reviewer',
     image_url: '/preview-math.png',
     created_at: new Date().toISOString()
