@@ -5,7 +5,7 @@ export type Reviewer = {
   title: string
   description: string
   subject: string
-  difficulty: 'easy' | 'Medium' | 'Hard'
+  difficulty: 'Easy' | 'Medium' | 'Hard'
   price: number
   payment_url: string
   image_url?: string
