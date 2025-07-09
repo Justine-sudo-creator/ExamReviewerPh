@@ -23,26 +23,4 @@ export const sampleReviewers: Reviewer[] = [
     image_url: '/preview-english.png',
     created_at: new Date().toISOString()
   },
-  {
-    id: '3',
-    title: 'Filipino Literature and Language',
-    description: 'Comprehensive review of Filipino literature, grammar, and comprehension skills.',
-    subject: 'Practice Sets',
-    difficulty: 'Medium',
-    price: 179,
-    payment_url: 'https://ko-fi.com/s/filipino-literature-review',
-    image_url: '/preview-filipino.png',
-    created_at: new Date().toISOString()
-  },
-  {
-    id: '4',
-    title: 'Logic and Critical Thinking',
-    description: 'Develop logical reasoning skills with practice problems and step-by-step solutions.',
-    subject: 'Practice Sets',
-    difficulty: 'Hard',
-    price: 249,
-    payment_url: 'https://gumroad.com/l/logic-critical-thinking',
-    image_url: '/preview-logic.png',
-    created_at: new Date().toISOString()
-  },
 ]
