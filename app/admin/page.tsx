@@ -101,7 +101,7 @@ export default function AdminPage() {
   title: formData.title,
   description: formData.description,
   subject: formData.subject,
-  difficulty: formData.difficulty as 'easy' | 'Medium' | 'Hard',
+  difficulty: formData.difficulty as 'Easy' | 'Medium' | 'Hard',
   price: parseInt(formData.price),
   payment_url: formData.payment_url,
   image_url: formData.image_url
@@ -316,7 +316,7 @@ export default function AdminPage() {
                           <SelectValue placeholder="Select difficulty" />
                         </SelectTrigger>
                         <SelectContent>
-                          <SelectItem value="easy">Easy</SelectItem>
+                          <SelectItem value="Easy">Easy</SelectItem>
                           <SelectItem value="Medium">Medium</SelectItem>
                           <SelectItem value="Hard">Hard</SelectItem>
                         </SelectContent>
