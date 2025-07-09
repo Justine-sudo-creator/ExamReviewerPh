@@ -45,15 +45,4 @@ export const sampleReviewers: Reviewer[] = [
     image_url: '/preview-logic.png',
     created_at: new Date().toISOString()
   },
-  {
-    id: '5',
-    title: 'Reading Comprehension Mastery',
-    description: 'Improve reading speed and comprehension with various text types and practice exercises.',
-    subject: 'Practice Sets',
-    difficulty: 'Easy',
-    price: 149,
-    payment_url: 'https://ko-fi.com/s/reading-comprehension-mastery',
-    image_url: '/preview-reading.png',
-    created_at: new Date().toISOString()
-  }
 ]
