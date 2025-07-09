@@ -50,7 +50,7 @@ export const sampleReviewers: Reviewer[] = [
     title: 'Reading Comprehension Mastery',
     description: 'Improve reading speed and comprehension with various text types and practice exercises.',
     subject: 'Practice Sets',
-    difficulty: 'easy',
+    difficulty: 'Easy',
     price: 149,
     payment_url: 'https://ko-fi.com/s/reading-comprehension-mastery',
     image_url: '/preview-reading.png',
