@@ -1,7 +1,7 @@
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
-import { ShoppingCart, Star } from 'lucide-react'
+import { ShoppingCart, Eye } from 'lucide-react'
 import { Reviewer } from '@/lib/database'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -53,9 +53,19 @@ export default function ReviewerCard({ reviewer }: ReviewerCardProps) {
             className="object-cover transition-transform duration-500 group-hover:scale-110"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
-          <div className="absolute top-3 right-3">
-            <div className="w-8 h-8 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center">
-              <Star className="h-4 w-4 text-yellow-500 fill-current" />
+          <div className="absolute top-3 right-3 group">
+            <button 
+              onClick={() => {
+                // Placeholder for preview functionality - you can add the link later
+                console.log('Preview clicked for:', reviewer.title)
+              }}
+              className="w-8 h-8 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white hover:scale-110 transition-all duration-200 relative"
+            >
+              <Eye className="h-4 w-4 text-gray-700" />
+              {/* Tooltip */}
+              <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 bg-gray-900 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap pointer-events-none">
+                Preview
+              </div>
             </div>
           </div>
         </div>
