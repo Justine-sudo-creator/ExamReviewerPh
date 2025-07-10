@@ -1,16 +1,19 @@
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
-import { ShoppingCart, Star } from 'lucide-react'
+import { ShoppingCart, Eye } from 'lucide-react'
 import { Reviewer } from '@/lib/database'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useState } from 'react'
 
 interface ReviewerCardProps {
   reviewer: Reviewer
 }
 
 export default function ReviewerCard({ reviewer }: ReviewerCardProps) {
+  const [showPreviewTooltip, setShowPreviewTooltip] = useState(false)
+
   const getDifficultyColor = (difficulty: string) => {
     switch (difficulty) {
       case 'Easy':
@@ -54,8 +57,25 @@ export default function ReviewerCard({ reviewer }: ReviewerCardProps) {
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
           <div className="absolute top-3 right-3">
-            <div className="w-8 h-8 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center">
-              <Star className="h-4 w-4 text-yellow-500 fill-current" />
+            <div className="relative">
+              <button
+                onClick={() => {
+                  // TODO: Add preview link functionality
+                  console.log('Preview clicked for:', reviewer.title)
+                  // window.open(reviewer.preview_url, '_blank')
+                }}
+                onMouseEnter={() => setShowPreviewTooltip(true)}
+                onMouseLeave={() => setShowPreviewTooltip(false)}
+                className="w-8 h-8 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white hover:scale-110 transition-all duration-200 shadow-sm"
+              >
+                <Eye className="h-4 w-4 text-gray-700" />
+              </button>
+              {showPreviewTooltip && (
+                <div className="absolute -top-10 left-1/2 transform -translate-x-1/2 bg-gray-900 text-white text-xs px-2 py-1 rounded-md whitespace-nowrap z-10">
+                  Preview
+                  <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-2 border-r-2 border-t-2 border-transparent border-t-gray-900"></div>
+                </div>
+              )}
             </div>
           </div>
         </div>

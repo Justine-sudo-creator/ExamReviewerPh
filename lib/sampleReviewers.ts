@@ -10,6 +10,7 @@ export const sampleReviewers: Reviewer[] = [
     price: 49,
     payment_url: 'https://ko-fi.com/s/math-upcat-reviewer',
     image_url: '/preview-math.png',
+    preview_url: 'https://example.com/preview/math-upcat',
     created_at: new Date().toISOString()
   },
   {
@@ -21,6 +22,7 @@ export const sampleReviewers: Reviewer[] = [
     price: 199,
     payment_url: 'https://gumroad.com/l/english-grammar-essentials',
     image_url: '/preview-english.png',
+    preview_url: 'https://example.com/preview/english-grammar',
     created_at: new Date().toISOString()
   },
 ]

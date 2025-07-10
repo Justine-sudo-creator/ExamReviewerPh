@@ -9,6 +9,7 @@ export type Reviewer = {
   price: number
   payment_url: string
   image_url?: string
+  preview_url?: string
   created_at: string
 }
 

@@ -21,6 +21,7 @@ interface ReviewerFormData {
   price: string
   payment_url: string
   image_url: string
+  preview_url: string
 }
 
 export default function AdminPage() {
@@ -39,7 +40,8 @@ export default function AdminPage() {
     difficulty: '',
     price: '',
     payment_url: '',
-    image_url: ''
+    image_url: '',
+    preview_url: ''
   })
 
   const router = useRouter()
@@ -104,7 +106,8 @@ export default function AdminPage() {
         difficulty: formData.difficulty as 'Easy' | 'Medium' | 'Hard',
         price: parseInt(formData.price),
         payment_url: formData.payment_url,
-        image_url: formData.image_url
+        image_url: formData.image_url,
+        preview_url: formData.preview_url
       }
 
       if (isEditing && editingId) {
@@ -121,7 +124,8 @@ export default function AdminPage() {
         difficulty: '',
         price: '',
         payment_url: '',
-        image_url: ''
+        image_url: '',
+        preview_url: ''
       })
       setIsEditing(false)
       setEditingId(null)
@@ -140,7 +144,8 @@ export default function AdminPage() {
       difficulty: reviewer.difficulty,
       price: reviewer.price.toString(),
       payment_url: reviewer.payment_url,
-      image_url: reviewer.image_url || ''
+      image_url: reviewer.image_url || '',
+      preview_url: reviewer.preview_url || ''
     })
     setIsEditing(true)
     setEditingId(reviewer.id)
@@ -166,7 +171,8 @@ export default function AdminPage() {
       difficulty: '',
       price: '',
       payment_url: '',
-      image_url: ''
+      image_url: '',
+      preview_url: ''
     })
     setIsEditing(false)
     setEditingId(null)
@@ -376,6 +382,17 @@ export default function AdminPage() {
                         onChange={(e) => setFormData({ ...formData, payment_url: e.target.value })}
                         placeholder="https://ko-fi.com/..."
                         required
+                        className="rounded-xl"
+                      />
+                    </div>
+                    <div>
+                      <Label htmlFor="preview_url" className="font-semibold">Preview URL</Label>
+                      <Input
+                        id="preview_url"
+                        type="url"
+                        value={formData.preview_url}
+                        onChange={(e) => setFormData({ ...formData, preview_url: e.target.value })}
+                        placeholder="https://example.com/preview/..."
                         className="rounded-xl"
                       />
                     </div>
