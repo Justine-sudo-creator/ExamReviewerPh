@@ -46,7 +46,7 @@ export default function ReviewerGrid() {
   if (loading) {
     return (
       <div className="flex items-center justify-center py-20">
-        <Loader2 className="h-8 w-8 animate-spin text-blue-600" />
+        <Loader2 className="h-8 w-8 animate-spin text-gray-900" />
       </div>
     )
   }
@@ -56,7 +56,7 @@ export default function ReviewerGrid() {
       <div className="text-center py-20">
         <AlertCircle className="h-12 w-12 text-red-500 mx-auto mb-4" />
         <p className="text-red-600 mb-4">{error}</p>
-        <Button onClick={fetchReviewers} variant="outline">
+        <Button onClick={fetchReviewers} variant="outline" className="rounded-full">
           Try Again
         </Button>
       </div>
@@ -64,7 +64,7 @@ export default function ReviewerGrid() {
   }
 
   return (
-    <section id="reviewers" className="py-20 bg-gray-50">
+    <section id="reviewers" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
@@ -76,16 +76,16 @@ export default function ReviewerGrid() {
         </div>
 
         {/* Subject Filter Tabs */}
-        <div className="flex flex-wrap justify-center gap-2 mb-12">
+        <div className="flex flex-wrap justify-center gap-3 mb-12">
           {subjects.map((subject) => (
             <Button
               key={subject}
               variant={activeSubject === subject ? "default" : "outline"}
               onClick={() => setActiveSubject(subject)}
-              className={`transition-all duration-200 ${
+              className={`transition-all duration-200 rounded-full px-6 py-2 font-semibold ${
                 activeSubject === subject
-                  ? 'bg-blue-600 hover:bg-blue-700'
-                  : 'hover:bg-blue-50 hover:text-blue-700 hover:border-blue-300'
+                  ? 'bg-gray-900 hover:bg-gray-800 text-white'
+                  : 'hover:bg-gray-100 hover:text-gray-900 border-gray-300'
               }`}
             >
               {subject}
@@ -95,7 +95,7 @@ export default function ReviewerGrid() {
 
         {/* Reviewers Grid */}
         {filteredReviewers.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredReviewers.map((reviewer) => (
               <ReviewerCard key={reviewer.id} reviewer={reviewer} />
             ))}

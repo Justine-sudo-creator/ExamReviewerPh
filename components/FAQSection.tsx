@@ -1,19 +1,19 @@
 'use client'
 
 import { useState } from 'react'
-import { ChevronDown, ChevronUp } from 'lucide-react'
+import { ChevronDown, ChevronUp, HelpCircle } from 'lucide-react'
 
 const faqs = [
   {
     question: "How do I receive the reviewers after payment?",
-    answer: "Once payment is confirmed and proof is uploaded, you’ll receive the soft copies via email within 24 hours. Don’t forget to check your spam folder!",
+    answer: "Once payment is confirmed and proof is uploaded, you'll receive the soft copies via email within 24 hours. Don't forget to check your spam folder!",
   },
   {
     question: "Do you offer hard copy delivery?",
     answer: "At the moment, we only send digital copies. This allows fast delivery and keeps costs low for all students.",
   },
   {
-    question: "What if I pay but don’t receive anything?",
+    question: "What if I pay but don't receive anything?",
     answer: "No worries—just contact our support. We verify all transactions manually and will make sure you receive your materials.",
   },
   {
@@ -30,30 +30,38 @@ export default function FAQSection() {
   }
 
   return (
-    <section id="how-it-works" className="bg-white py-20 border-t border-gray-200 scroll-mt-24">
+    <section id="how-it-works" className="bg-gray-50 py-20 scroll-mt-24">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-extrabold text-gray-900 mb-10 text-center">How It Works / FAQs</h2>
+        <div className="text-center mb-12">
+          <div className="w-16 h-16 bg-yellow-400 rounded-full flex items-center justify-center mx-auto mb-4">
+            <HelpCircle className="h-8 w-8 text-black" />
+          </div>
+          <h2 className="text-3xl font-bold text-gray-900 mb-4">How It Works / FAQs</h2>
+          <p className="text-lg text-gray-600">Everything you need to know about our platform</p>
+        </div>
         <div className="space-y-4">
           {faqs.map((faq, index) => {
             const isOpen = openIndex === index
             return (
               <div
                 key={index}
-                className="transition-all duration-300 border rounded-xl overflow-hidden"
+                className="transition-all duration-300 border border-gray-200 rounded-2xl overflow-hidden bg-white hover:shadow-md"
               >
                 <button
                   onClick={() => toggleIndex(index)}
-                  className="flex w-full justify-between items-center px-5 py-4 bg-gray-50 hover:bg-gray-100 transition-colors"
+                  className="flex w-full justify-between items-center px-6 py-5 hover:bg-gray-50 transition-colors"
                 >
-                  <span className="text-base font-medium text-gray-800">{faq.question}</span>
-                  {isOpen ? (
-                    <ChevronUp className="w-5 h-5 text-gray-500" />
-                  ) : (
-                    <ChevronDown className="w-5 h-5 text-gray-500" />
-                  )}
+                  <span className="text-base font-semibold text-gray-900 text-left">{faq.question}</span>
+                  <div className="flex-shrink-0 ml-4">
+                    {isOpen ? (
+                      <ChevronUp className="w-5 h-5 text-gray-500" />
+                    ) : (
+                      <ChevronDown className="w-5 h-5 text-gray-500" />
+                    )}
+                  </div>
                 </button>
                 {isOpen && (
-                  <div className="px-5 pb-4 text-gray-600 text-sm leading-relaxed bg-white">
+                  <div className="px-6 pb-5 text-gray-600 text-sm leading-relaxed border-t border-gray-100 pt-4">
                     {faq.answer}
                   </div>
                 )}

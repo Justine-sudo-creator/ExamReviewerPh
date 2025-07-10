@@ -1,64 +1,91 @@
 import { Button } from '@/components/ui/button'
-import { Timer, ShieldCheck, FileText, UserCheck } from 'lucide-react'
+import { Users, Shield, FileText, Zap } from 'lucide-react'
 import Link from 'next/link'
 
 export default function HeroSection() {
   return (
-    <section className="bg-gradient-to-br from-blue-50 to-indigo-100 py-20 sm:py-28">
+    <section className="bg-gray-50 py-20 sm:py-28 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           
           {/* Left Content */}
           <div className="text-center lg:text-left">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
-              Review Smarter, Not Harder.
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+              Ace your exams
               <br />
-              <span className="text-blue-600">Fix your exam weaknesses.</span>
+              <span className="block">across the Philippines</span>
             </h1>
-            <p className="text-lg text-gray-700 mb-8 max-w-2xl">
-              Cramming? Struggling with mock scores? Only have 2 weeks left?
-              <br className="hidden sm:block" />
-              We offer solution packs designed for your specific challenge — not just your subject.
+            <p className="text-lg text-gray-600 mb-8 max-w-2xl leading-relaxed">
+              A comprehensive platform to connect with the best entrance exam review materials, 
+              build your knowledge now
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <Button asChild size="lg" className="bg-blue-600 hover:bg-blue-700">
-                <Link href="/#reviewers">🔍 Find My Exam Solution</Link>
+              <Button asChild size="lg" className="bg-gray-900 hover:bg-gray-800 text-white rounded-full px-8 py-3 font-semibold">
+                <Link href="/#reviewers">Get started today</Link>
               </Button>
-              <Button variant="outline" size="lg" asChild>
-                <Link href="/#how-it-works">How It Works</Link>
+              <Button variant="outline" size="lg" asChild className="border-2 border-yellow-400 text-gray-900 hover:bg-yellow-50 rounded-full px-8 py-3 font-semibold">
+                <Link href="/#how-it-works">Our plans</Link>
               </Button>
             </div>
           </div>
 
-          {/* Right Content - Stats */}
-          <div className="grid grid-cols-2 gap-6">
-            <div className="bg-white rounded-lg p-6 shadow-sm border">
-              <div className="flex items-center justify-center w-12 h-12 bg-blue-100 rounded-lg mb-4">
-                <Timer className="h-6 w-6 text-blue-600" />
+          {/* Right Content - Illustration Placeholder */}
+          <div className="relative">
+            <div className="w-full h-96 bg-gradient-to-br from-blue-100 to-purple-100 rounded-3xl flex items-center justify-center relative overflow-hidden">
+              {/* Abstract illustration elements */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="grid grid-cols-3 gap-4 opacity-20">
+                  {[...Array(9)].map((_, i) => (
+                    <div key={i} className="w-12 h-12 bg-gray-800 rounded-full animate-pulse" style={{animationDelay: `${i * 0.2}s`}}></div>
+                  ))}
+                </div>
               </div>
-              <h3 className="text-2xl font-bold text-gray-900">Built for Speed</h3>
-              <p className="text-gray-600 text-sm">Beat time pressure with speed drills</p>
+              <div className="relative z-10 text-center">
+                <Users className="h-16 w-16 text-gray-700 mx-auto mb-4" />
+                <p className="text-gray-700 font-semibold">Filipino Students</p>
+                <p className="text-gray-600 text-sm">Succeeding Together</p>
+              </div>
             </div>
-            <div className="bg-white rounded-lg p-6 shadow-sm border">
-              <div className="flex items-center justify-center w-12 h-12 bg-green-100 rounded-lg mb-4">
-                <ShieldCheck className="h-6 w-6 text-green-600" />
+          </div>
+        </div>
+
+        {/* Feature Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-16">
+          {/* Community Insights Card */}
+          <div className="bg-gradient-to-br from-pink-100 to-pink-200 rounded-3xl p-8 border border-pink-200">
+            <div className="flex items-start space-x-4">
+              <div className="w-12 h-12 bg-pink-300 rounded-full flex items-center justify-center flex-shrink-0">
+                <Shield className="h-6 w-6 text-pink-800" />
               </div>
-              <h3 className="text-2xl font-bold text-gray-900">Confidence Packs</h3>
-              <p className="text-gray-600 text-sm">Built to reduce test anxiety</p>
+              <div>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">Proven Results</h3>
+                <p className="text-gray-700 text-sm mb-4 leading-relaxed">
+                  All review materials are tested by successful exam takers and fully 
+                  verified, we care about your success!
+                </p>
+                <Link href="/#reviewers" className="text-pink-800 font-semibold text-sm hover:underline">
+                  Check our materials →
+                </Link>
+              </div>
             </div>
-            <div className="bg-white rounded-lg p-6 shadow-sm border">
-              <div className="flex items-center justify-center w-12 h-12 bg-yellow-100 rounded-lg mb-4">
-                <FileText className="h-6 w-6 text-yellow-600" />
+          </div>
+
+          {/* Free Support Card */}
+          <div className="bg-gradient-to-br from-yellow-300 to-yellow-400 rounded-3xl p-8 border border-yellow-400">
+            <div className="flex items-start space-x-4">
+              <div className="w-12 h-12 bg-yellow-500 rounded-full flex items-center justify-center flex-shrink-0">
+                <Zap className="h-6 w-6 text-yellow-900" />
               </div>
-              <h3 className="text-2xl font-bold text-gray-900">Mock Simulations</h3>
-              <p className="text-gray-600 text-sm">Real test format + pacing practice</p>
-            </div>
-            <div className="bg-white rounded-lg p-6 shadow-sm border">
-              <div className="flex items-center justify-center w-12 h-12 bg-purple-100 rounded-lg mb-4">
-                <UserCheck className="h-6 w-6 text-purple-600" />
+              <div>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">Fast delivery</h3>
+                <p className="text-gray-700 text-sm mb-4 leading-relaxed">
+                  We're always here whenever you need us, our fast delivery will get you 
+                  your materials immediately.
+                </p>
+                <Link href="/#how-it-works" className="text-yellow-900 font-semibold text-sm hover:underline">
+                  Compare plans →
+                </Link>
               </div>
-              <h3 className="text-2xl font-bold text-gray-900">Student-Proven</h3>
-              <p className="text-gray-600 text-sm">Used by 1,000+ test takers</p>
             </div>
           </div>
         </div>
