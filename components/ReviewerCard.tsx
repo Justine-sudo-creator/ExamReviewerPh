@@ -48,7 +48,7 @@ export default function ReviewerCard({ reviewer }: ReviewerCardProps) {
     <Card className="h-full flex flex-col transition-all duration-300 hover:shadow-xl hover:-translate-y-2 border-0 bg-white rounded-3xl overflow-hidden group">
       <CardHeader className="pb-4 relative">
         {/* Product Image */}
-        <div className="w-full h-48 mb-4 relative overflow-hidden rounded-2xl bg-gradient-to-br from-gray-100 to-gray-200">
+        <div className="w-full h-64 mb-4 relative overflow-hidden rounded-2xl bg-gradient-to-br from-gray-100 to-gray-200">
           <Image
             src={reviewer.image_url || '/placeholder-reviewer.png'}
             alt={reviewer.title}
