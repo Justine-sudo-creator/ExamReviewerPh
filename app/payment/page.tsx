@@ -121,7 +121,7 @@ export default function PaymentPage() {
           </div>
           <h2 className="text-2xl font-bold mb-4 text-gray-900">Step 1: Send Payment via GCash</h2>
           <p className="text-gray-700 mb-2">Send <strong className="text-gray-900">₱{selectedProduct.price}</strong> to:</p>
-          <p className="font-mono text-gray-900 font-semibold text-lg mb-6">Juan Dela Cruz — 0917-XXXXXXX</p>
+          <p className="font-mono text-gray-900 font-semibold text-lg mb-6">Jonathan Mationg — 0947-506-6184</p>
 
           <div className="inline-block border-2 border-gray-200 rounded-2xl p-6 bg-gray-50">
             <Image
