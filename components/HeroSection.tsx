@@ -1,6 +1,7 @@
 import { Button } from '@/components/ui/button'
 import { Users, Shield, FileText, Zap } from 'lucide-react'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function HeroSection() {
   return (
@@ -30,24 +31,16 @@ export default function HeroSection() {
           </div>
 
           {/* Right Content - Illustration Placeholder */}
-          <div className="relative">
-            <div className="w-full h-96 bg-gradient-to-br from-blue-100 to-purple-100 rounded-3xl flex items-center justify-center relative overflow-hidden">
-              {/* Abstract illustration elements */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="grid grid-cols-3 gap-4 opacity-20">
-                  {[...Array(9)].map((_, i) => (
-                    <div key={i} className="w-12 h-12 bg-gray-800 rounded-full animate-pulse" style={{animationDelay: `${i * 0.2}s`}}></div>
-                  ))}
-                </div>
-              </div>
-              <div className="relative z-10 text-center">
-                <Users className="h-16 w-16 text-gray-700 mx-auto mb-4" />
-                <p className="text-gray-700 font-semibold">Filipino Students</p>
-                <p className="text-gray-600 text-sm">Succeeding Together</p>
-              </div>
-            </div>
+          <div className="relative w-full h-96">
+            <Image
+              src="/exams.png"
+              alt="Illustration"
+              layout="fill"
+              objectFit="cover"
+              className="rounded-2xl"
+            />
           </div>
-        </div>
+          </div>
 
         {/* Feature Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-16">
