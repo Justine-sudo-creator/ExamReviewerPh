@@ -147,7 +147,7 @@ export default function PaymentPage() {
           <h2 className="text-2xl font-bold mb-4 text-center text-gray-900">Step 2: Submit Payment Proof</h2>
           <p className="text-gray-700 mb-4 text-center">Upload your payment screenshot using this form:</p>
           <iframe
-            src="https://docs.google.com/forms/d/e/1FAIpQLSf_example_form_id/viewform?embedded=true"
+            src="https://docs.google.com/forms/d/e/1FAIpQLSe8wWTCa8ul6_7E72TWSp1yG0OSIGl-8uIWcY7diUGoLf3H2g/viewform?embedded=true"
             width="100%"
             height="500"
             className="rounded-2xl border-2 border-gray-200"
@@ -156,7 +156,7 @@ export default function PaymentPage() {
             <p className="text-gray-600 mb-2">Having trouble with the form?</p>
             <Button asChild variant="outline" className="rounded-full">
               <a
-                href="https://docs.google.com/forms/d/e/1FAIpQLSf_example_form_id/viewform"
+                href="https://docs.google.com/forms/d/e/1FAIpQLSe8wWTCa8ul6_7E72TWSp1yG0OSIGl-8uIWcY7diUGoLf3H2g/viewform?usp=header"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2"
