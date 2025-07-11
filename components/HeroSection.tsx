@@ -12,13 +12,12 @@ export default function HeroSection() {
           {/* Left Content */}
           <div className="text-center lg:text-left">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-              Ace your exams
+              Built by students who passed the CETs
               <br />
-              <span className="block">across the Philippines</span>
+              <span className="block">so you can pass them too 😘</span>
             </h1>
             <p className="text-lg text-gray-600 mb-8 max-w-2xl leading-relaxed">
-              A comprehensive platform to connect with the best entrance exam review materials, 
-              build your knowledge now
+              We know how hard it is to find good reviewers. That’s why we built a platform where students can access student-made digital reviewers and more, so you don't have to struggle finding them anywhere.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <Button asChild size="lg" className="bg-gray-900 hover:bg-gray-800 text-white rounded-full px-8 py-3 font-semibold">
@@ -51,10 +50,9 @@ export default function HeroSection() {
                 <Shield className="h-6 w-6 text-pink-800" />
               </div>
               <div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Proven Results</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">Used by real passers</h3>
                 <p className="text-gray-700 text-sm mb-4 leading-relaxed">
-                  All review materials are tested by successful exam takers and fully 
-                  verified, we care about your success!
+                  Every reviewer here was actually made and used by students who passed various college entrance exams.
                 </p>
                 <Link href="/#reviewers" className="text-pink-800 font-semibold text-sm hover:underline">
                   Check our materials →
@@ -70,10 +68,9 @@ export default function HeroSection() {
                 <Zap className="h-6 w-6 text-yellow-900" />
               </div>
               <div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Fast delivery</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">Instant access, no stress</h3>
                 <p className="text-gray-700 text-sm mb-4 leading-relaxed">
-                  We're always here whenever you need us, our fast delivery will get you 
-                  your materials immediately.
+                  Download your reviewers the moment you check out!
                 </p>
                 <Link href="/#how-it-works" className="text-yellow-900 font-semibold text-sm hover:underline">
                   Compare plans →
