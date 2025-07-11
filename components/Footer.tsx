@@ -69,11 +69,11 @@ export default function Footer() {
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
                 <Mail className="h-5 w-5 text-yellow-400" />
-                <span className="text-gray-400">hello@examreview.ph</span>
+                <span className="text-gray-400">justinemationg12@gmail.com</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="h-5 w-5 text-yellow-400" />
-                <span className="text-gray-400">+63 912 345 6789</span>
+                <span className="text-gray-400">+63 967 463 8941</span>
               </div>
               <div className="flex items-center space-x-3">
                 <MapPin className="h-5 w-5 text-yellow-400" />
@@ -85,7 +85,7 @@ export default function Footer() {
 
         <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-400 text-sm">
-            © 2024 ExamReview PH. All rights reserved.
+            © 2025 ExamReview PH. All rights reserved.
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Privacy</a>

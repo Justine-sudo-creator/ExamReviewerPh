@@ -63,14 +63,14 @@ export default function ReviewerGrid() {
   }
 
   return (
-    <section id="reviewers" className="py-20 bg-white">
+    <section id="reviewers" className="py-20 bg-[#1f2937] text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-            Browse Our Resources
+        <div className="text-center mb-14">
+          <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-gray-100 mb-4 leading-tight">
+            Browse Our <span className="text-yellow-400">Resources</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Choose from our curated collection of entrance exam review materials
+          <p className="text-lg sm:text-xl text-gray-400 max-w-2xl mx-auto">
+            Choose from our curated collection of entrance exam review materials <span className="text-white font-medium">built by students, for students.</span>
           </p>
         </div>
 
@@ -84,7 +84,7 @@ export default function ReviewerGrid() {
               className={`transition-all duration-200 rounded-full px-6 py-2 font-semibold ${
                 activeSubject === subject
                   ? 'bg-gray-900 hover:bg-gray-800 text-white'
-                  : 'hover:bg-gray-100 hover:text-gray-900 border-gray-300'
+                  : 'text-gray-700 border border-gray-300 hover:bg-gray-200 hover:text-gray-900'
               }`}
             >
               {subject}
@@ -101,7 +101,7 @@ export default function ReviewerGrid() {
           </div>
         ) : (
           <div className="text-center py-12">
-            <p className="text-gray-500 text-lg">
+            <p className="text-white text-lg">
               No reviewers found for {activeSubject === 'All' ? 'this search' : activeSubject}.
             </p>
           </div>
