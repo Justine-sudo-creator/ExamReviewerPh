@@ -48,12 +48,13 @@ export default function ReviewerCard({ reviewer }: ReviewerCardProps) {
     <Card className="h-full flex flex-col transition-all duration-300 hover:shadow-xl hover:-translate-y-2 border-0 bg-white rounded-3xl overflow-hidden group">
       <CardHeader className="pb-4 relative">
         {/* Product Image */}
-        <div className="w-full h-64 mb-4 relative overflow-hidden rounded-2xl bg-gradient-to-br from-gray-100 to-gray-200">
+        <div className="relative w-full max-w-md mx-auto rounded-2xl overflow-hidden">
           <Image
             src={reviewer.image_url || '/placeholder-reviewer.png'}
             alt={reviewer.title}
-            fill
-            className="object-cover transition-transform duration-500 group-hover:scale-110"
+            width={800} // fallback width
+            layout="intrinsic"
+            className="w-full h-auto object-contain"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
           <div className="absolute top-3 right-3">
