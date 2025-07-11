@@ -98,6 +98,7 @@ export default function AdminPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+    setLoading(true)
     try {
       const reviewerData = {
         title: formData.title,
@@ -111,9 +112,15 @@ export default function AdminPage() {
       }
 
       if (isEditing && editingId) {
-        await updateReviewer(editingId, reviewerData)
+        const result = await updateReviewer(editingId, reviewerData)
+        if (!result) {
+          throw new Error('Failed to update reviewer')
+        }
       } else {
-        await addReviewer(reviewerData)
+        const result = await addReviewer(reviewerData)
+        if (!result) {
+          throw new Error('Failed to add reviewer')
+        }
       }
 
       // Reset form
@@ -133,6 +140,8 @@ export default function AdminPage() {
     } catch (error) {
       console.error('Error saving reviewer:', error)
       alert('Failed to save reviewer. Please try again.')
+    } finally {
+      setLoading(false)
     }
   }
 
@@ -154,12 +163,19 @@ export default function AdminPage() {
   const handleDelete = async (id: string) => {
     if (!confirm('Are you sure you want to delete this reviewer?')) return
 
+    setLoading(true)
     try {
-      await deleteReviewer(id)
-      fetchReviewers()
+      const success = await deleteReviewer(id)
+      if (success) {
+        fetchReviewers()
+      } else {
+        throw new Error('Failed to delete reviewer')
+      }
     } catch (error) {
       console.error('Error deleting reviewer:', error)
       alert('Failed to delete reviewer. Please try again.')
+    } finally {
+      setLoading(false)
     }
   }
 

@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { getReviewers, initializeData, Reviewer } from '@/lib/database'
+import { getReviewers, Reviewer } from '@/lib/database'
 import ReviewerCard from './ReviewerCard'
 import { Button } from '@/components/ui/button'
 import { Loader2, AlertCircle } from 'lucide-react'
@@ -16,7 +16,6 @@ export default function ReviewerGrid() {
   const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
-    initializeData()
     fetchReviewers()
   }, [])
 
