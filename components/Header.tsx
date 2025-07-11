@@ -17,7 +17,6 @@ export default function Header() {
             <div className="w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center">
               <Book className="h-5 w-5 text-black" />
             </div>
-            <span className="text-xl font-bold text-gray-900">ExamReview PH</span>
             <span className="text-xl font-bold text-white">ExamReview PH</span>
           </Link>
 
