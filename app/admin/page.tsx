@@ -19,7 +19,6 @@ interface ReviewerFormData {
   subject: string
   difficulty: string
   price: string
-  payment_url: string
   image_url: string
   preview_url: string
 }
@@ -39,7 +38,6 @@ export default function AdminPage() {
     subject: '',
     difficulty: '',
     price: '',
-    payment_url: '',
     image_url: '',
     preview_url: ''
   })
@@ -106,7 +104,7 @@ export default function AdminPage() {
         subject: formData.subject,
         difficulty: formData.difficulty as 'Easy' | 'Medium' | 'Hard',
         price: parseInt(formData.price),
-        payment_url: formData.payment_url,
+        payment_url: '#', // Default placeholder since field is removed from UI
         image_url: formData.image_url,
         preview_url: formData.preview_url
       }
@@ -130,7 +128,6 @@ export default function AdminPage() {
         subject: '',
         difficulty: '',
         price: '',
-        payment_url: '',
         image_url: '',
         preview_url: ''
       })
@@ -152,7 +149,6 @@ export default function AdminPage() {
       subject: reviewer.subject,
       difficulty: reviewer.difficulty,
       price: reviewer.price.toString(),
-      payment_url: reviewer.payment_url,
       image_url: reviewer.image_url || '',
       preview_url: reviewer.preview_url || ''
     })
@@ -186,7 +182,6 @@ export default function AdminPage() {
       subject: '',
       difficulty: '',
       price: '',
-      payment_url: '',
       image_url: '',
       preview_url: ''
     })
@@ -197,9 +192,8 @@ export default function AdminPage() {
   const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0]
     if (file) {
-      // In a real app, you'd upload to a service like Cloudinary or AWS S3
-      // For demo purposes, we'll use a placeholder URL
-      const imageUrl = `/uploads/${file.name}`
+      // Create a local URL for the uploaded file to enable preview
+      const imageUrl = URL.createObjectURL(file)
       setFormData({ ...formData, image_url: imageUrl })
     }
   }
@@ -385,18 +379,6 @@ export default function AdminPage() {
                         type="number"
                         value={formData.price}
                         onChange={(e) => setFormData({ ...formData, price: e.target.value })}
-                        required
-                        className="rounded-xl"
-                      />
-                    </div>
-                    <div>
-                      <Label htmlFor="payment_url" className="font-semibold">Payment URL</Label>
-                      <Input
-                        id="payment_url"
-                        type="url"
-                        value={formData.payment_url}
-                        onChange={(e) => setFormData({ ...formData, payment_url: e.target.value })}
-                        placeholder="https://ko-fi.com/..."
                         required
                         className="rounded-xl"
                       />
