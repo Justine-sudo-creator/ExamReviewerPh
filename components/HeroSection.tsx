@@ -12,9 +12,9 @@ export default function HeroSection() {
           {/* Left Content */}
           <div className="text-center lg:text-left">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-              College Entrance Reviewers
+              Built by the students
               <br />
-              <span className="block">for the students, by the students</span>
+              <span className="block">for the students</span>
             </h1>
             <p className="text-lg text-gray-600 mb-8 max-w-2xl leading-relaxed">
               We know how hard it is to find good reviewers. That’s why we built a platform where students can access student-made digital reviewers and more, so you don't have to struggle finding them anywhere.
