@@ -184,13 +184,13 @@ export default function PaymentPage() {
             </li>
             <li className="flex items-start gap-3">
               <Mail className="h-5 w-5 text-green-500 mt-1 flex-shrink-0" />
-              <span>Check your inbox and spam folder. Look for a message from <strong>support@examreview.ph</strong>.</span>
+              <span>Check your inbox and spam folder. Look for a message from <strong>justinemationg12@gmail.com</strong>.</span>
             </li>
             <li className="flex items-start gap-3">
               <span className="text-blue-500 mt-1 flex-shrink-0">📩</span>
               <span>For help, email us at:
                 <a href="mailto:support@examreview.ph" className="text-blue-600 font-semibold hover:underline ml-1">
-                  support@examreview.ph
+                  justinemationg12@gmail.com
                 </a>
               </span>
             </li>

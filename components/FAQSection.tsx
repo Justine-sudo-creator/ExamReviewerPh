@@ -13,12 +13,16 @@ const faqs = [
     answer: "At the moment, we only send digital copies. This allows fast delivery and keeps costs low for all students.",
   },
   {
-    question: "What if I pay but don't receive anything?",
-    answer: "No worries—just contact our support. We verify all transactions manually and will make sure you receive your materials.",
+    question: "Where do these reviewers come from?",
+    answer: "All our reviewers are curated from materials used by real students who passed their entrance exams. Many are edited or compiled to remove irrelevant or low-quality content.",
   },
   {
     question: "Can I share the reviewer with my friends?",
     answer: "Each purchase is for personal use. We rely on honest students to respect our work and not redistribute the files.",
+  },
+  {
+    question: "Can I sell my own reviewers here?",
+    answer: "Yes! If you’ve created your own digital reviewers or want to share helpful materials with other students, you’re welcome to sell them here. Just message the owner through our contact page or social media.",
   },
 ]
 

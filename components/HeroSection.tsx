@@ -12,9 +12,9 @@ export default function HeroSection() {
           {/* Left Content */}
           <div className="text-center lg:text-left">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-              Built by students who passed the CETs
+              College Entrance Reviewers
               <br />
-              <span className="block">so you can pass them too 😘</span>
+              <span className="block">for the students, by the students</span>
             </h1>
             <p className="text-lg text-gray-600 mb-8 max-w-2xl leading-relaxed">
               We know how hard it is to find good reviewers. That’s why we built a platform where students can access student-made digital reviewers and more, so you don't have to struggle finding them anywhere.
@@ -52,7 +52,7 @@ export default function HeroSection() {
               <div>
                 <h3 className="text-xl font-bold text-gray-900 mb-2">Used by real passers</h3>
                 <p className="text-gray-700 text-sm mb-4 leading-relaxed">
-                  Every reviewer here was actually made and used by students who passed various college entrance exams.
+                  Every reviewer here was made and used by students who passed various college entrance exams.
                 </p>
                 <Link href="/#reviewers" className="text-pink-800 font-semibold text-sm hover:underline">
                   Check our materials →
