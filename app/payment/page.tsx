@@ -123,16 +123,19 @@ export default function PaymentPage() {
           <p className="text-gray-700 mb-2">Send <strong className="text-gray-900">₱{selectedProduct.price}</strong> to:</p>
           <p className="font-mono text-gray-900 font-semibold text-lg mb-6">Jonathan Mationg — 0947-506-6184</p>
 
-          <div className="inline-block border-2 border-gray-200 rounded-2xl bg-gray-50">
-            <Image
-              src="/gcash-qr.png"
-              alt="GCash QR Code"
-              width={180}
-              height={180}
-              className="rounded-xl block"
-            />
-            <p className="text-sm text-gray-600 text-center mt-2">Scan this QR code using GCash App</p>
-          </div>
+          <div className="inline-block">
+  <div className="border-2 border-gray-200 rounded-2xl bg-gray-50">
+    <Image
+      src="/gcash-qr.png"
+      alt="GCash QR Code"
+      width={180}
+      height={180}
+      className="rounded-xl block"
+    />
+  </div>
+  <p className="text-sm text-gray-600 text-center mt-2">Scan this QR code using GCash App</p>
+</div>
+
 
           <div className="mt-6 bg-yellow-50 border-2 border-yellow-200 text-yellow-800 p-4 rounded-2xl">
             <p className="font-semibold">📸 Don't forget to take a screenshot of your payment confirmation!</p>
