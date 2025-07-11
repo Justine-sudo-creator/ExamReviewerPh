@@ -62,7 +62,7 @@ export default function ReviewerCard({ reviewer }: ReviewerCardProps) {
                 onClick={() => {
                   // TODO: Add preview link functionality
                   console.log('Preview clicked for:', reviewer.title)
-                  // window.open(reviewer.preview_url, '_blank')
+                  window.open(reviewer.preview_url, '_blank')
                 }}
                 onMouseEnter={() => setShowPreviewTooltip(true)}
                 onMouseLeave={() => setShowPreviewTooltip(false)}
