@@ -1,5 +1,12 @@
 'use client'
 
+import { createClient } from '@supabase/supabase-js'
+
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!
+const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+
+const supabase = createClient(supabaseUrl, supabaseAnonKey)
+
 import { useState, useEffect } from 'react'
 import { getReviewers, addReviewer, updateReviewer, deleteReviewer, adminLogin, adminLogout, isAdminLoggedIn, Reviewer } from '@/lib/database'
 import { Button } from '@/components/ui/button'
@@ -189,14 +196,36 @@ export default function AdminPage() {
     setEditingId(null)
   }
 
-  const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0]
-    if (file) {
-      // Create a local URL for the uploaded file to enable preview
-      const imageUrl = URL.createObjectURL(file)
-      setFormData({ ...formData, image_url: imageUrl })
-    }
+const handleImageUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+  const file = e.target.files?.[0]
+  if (!file) return
+
+  const fileExt = file.name.split('.').pop()
+  const fileName = `${Date.now()}.${fileExt}`
+  const filePath = `reviewers/${fileName}` // Optional folder inside bucket
+
+  const { error } = await supabase.storage
+    .from('reviewer-images') // Replace with your actual bucket name
+    .upload(filePath, file, {
+      cacheControl: '3600',
+      upsert: false
+    })
+
+  if (error) {
+    console.error('Upload failed:', error.message)
+    alert('Failed to upload image. Please try again.')
+    return
   }
+
+  const { data } = supabase.storage.from('reviewer-images').getPublicUrl(filePath)
+
+  if (data?.publicUrl) {
+    setFormData({ ...formData, image_url: data.publicUrl })
+  } else {
+    alert('Failed to get public image URL.')
+  }
+}
+
 
   const removeImage = () => {
     setFormData({ ...formData, image_url: '' })
