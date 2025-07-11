@@ -11,6 +11,10 @@ export const metadata: Metadata = {
   keywords: 'entrance exam, reviewer, philippines, upcat, acet, dcat, math, english, filipino, logic, reading',
   authors: [{ name: 'ExamReview PH' }],
   robots: 'index, follow',
+  icons: {
+    icon: '/favicon.png',             // ✅ Favicon for most browsers
+    apple: '/favicon.png',            // ✅ Apple touch icon fallback
+  },
   openGraph: {
     type: 'website',
     locale: 'en_PH',
@@ -35,6 +39,7 @@ export const metadata: Metadata = {
     description: 'Get access to curated review materials for UPCAT, ACET, DCAT, and other Philippine entrance exams.',
   },
 }
+
 
 // No type annotation here
 export const viewport = {
